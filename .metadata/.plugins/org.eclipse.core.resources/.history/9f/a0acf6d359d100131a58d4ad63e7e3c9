@@ -50,7 +50,7 @@ public class mahoutSequenceGenerator{
 			
 			Path outputPath = new Path(fileToGenerate);
 			@SuppressWarnings("deprecation")
-			SequenceFile.Writer fileOutput = new SequenceFile.Writer(fs, conf, outputPath, org.apache.hadoop.io.Text.class, org.apache.hadoop.io.Text.class);
+			SequenceFile.Writer fileOutput = new SequenceFile.Writer(fs, conf, outputPath, key.getClass(), value.getClass());
 			
 		
 			
@@ -72,7 +72,7 @@ public class mahoutSequenceGenerator{
 					
 					
 					//Write the content of the file to the sequence file
-					key =new Text("/"+classToAssign+"/"+currentFile);
+					key =new Text(classToAssign);
 					value=new Text(content);
 					
 					fileOutput.append(key,value);
