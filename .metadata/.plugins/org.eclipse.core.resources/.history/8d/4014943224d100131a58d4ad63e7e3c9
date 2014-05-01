@@ -13,14 +13,14 @@ import java.io.IOException;
 public class mahoutSequenceGenerator{
 
     public static void main(String args[]) throws IOException{
-    	    	
+
 		//Check that the use of the process is the correct
-		if (args.length<3){
+		if (args.length!=2){
 			System.out.println("Usage of process: mahoutSequenceGenerator.jar <<Class>> <<InputFolder>> <<FileToGenerate>>");
 		}
 		else
 		{
-			//Extract the arguments of the process
+			//Extract the args of the process
 			String classToAssign = args[0];
 			String inputFolder = args[1];
 			String fileToGenerate =args[2];
@@ -48,7 +48,7 @@ public class mahoutSequenceGenerator{
 			Text key = new Text();
 			Text value = new Text();
 			
-			Path outputPath = new Path(fileToGenerate);
+			Path outputPath = new Path(args[2]);
 			@SuppressWarnings("deprecation")
 			SequenceFile.Writer fileOutput = new SequenceFile.Writer(fs, conf, outputPath, key.getClass(), value.getClass());
 			

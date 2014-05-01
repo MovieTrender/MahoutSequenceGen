@@ -13,7 +13,10 @@ import java.io.IOException;
 public class mahoutSequenceGenerator{
 
     public static void main(String args[]) throws IOException{
-    	    	
+    	
+    	System.out.println(args[0]);
+    	
+
 		//Check that the use of the process is the correct
 		if (args.length<3){
 			System.out.println("Usage of process: mahoutSequenceGenerator.jar <<Class>> <<InputFolder>> <<FileToGenerate>>");
