@@ -61,7 +61,7 @@ public class mahoutSequenceGenerator{
 					
 					//Read the file 
 					currentFile=file.getName();
-					fileReader =new FileReader(folder.getAbsolutePath()+"/"+currentFile);
+					fileReader =new FileReader(folder.getAbsolutePath()+"\\"+currentFile);
 					bufferedReader = new BufferedReader(fileReader);
 					
 					content="";
