@@ -75,7 +75,7 @@ public class mahoutSequenceGenerator{
 					//Write the content of the file to the sequence file
 					key =new Text("/"+classToAssign+"/"+currentFile);
 					value=new Text(content);
-					//Append the key value to the file
+					
 					fileOutput.append(key,value);
 				}
 			}

@@ -15,7 +15,7 @@ public class mahoutSequenceGenerator{
     public static void main(String args[]) throws IOException{
     	    	
 		//Check that the use of the process is the correct
-		if (args.length!=3){
+		if (args.length<3){
 			System.out.println("Usage of process: mahoutSequenceGenerator.jar <<Class>> <<InputFolder>> <<FileToGenerate>>");
 		}
 		else
@@ -48,7 +48,6 @@ public class mahoutSequenceGenerator{
 			Text key = new Text();
 			Text value = new Text();
 			
-			//Open the sequence file
 			Path outputPath = new Path(fileToGenerate);
 			@SuppressWarnings("deprecation")
 			SequenceFile.Writer fileOutput = new SequenceFile.Writer(fs, conf, outputPath, org.apache.hadoop.io.Text.class, org.apache.hadoop.io.Text.class);
@@ -75,7 +74,7 @@ public class mahoutSequenceGenerator{
 					//Write the content of the file to the sequence file
 					key =new Text("/"+classToAssign+"/"+currentFile);
 					value=new Text(content);
-					//Append the key value to the file
+					
 					fileOutput.append(key,value);
 				}
 			}
