@@ -1,20 +1,20 @@
 ## Read [Project Documentation](https://github.com/MovieTrender/Documentation "Project Documentation")
 
 
-##Mahout Sequence Generator
+## Mahout Sequence Generator
 
 
 Generates a sequence file for training Mahout.
 
 The output of Mahout is a [Sentiment Model](https://github.com/MovieTrender/SentimentModel "Sentiment Model") for classifying tweets.
 
-###Use
+### Use
 
 The process is executed as follows:
 
 	hadoop jar mahoutSequenceGenerator.jar "Class to assign" <<InputFolder (local folder)>> <<OutputFolder (in HDFS)>>
 
-###What it does?
+### What it does?
 
 Generates a sequence file with all the individual files downloaded from Twitter.
 
